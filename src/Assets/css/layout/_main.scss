@@ -1,0 +1,53 @@
+.main {
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  padding-left: 72px;
+  background: #F0F0F3;
+  display: flex;
+
+  .content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 56px 24px 24px 24px;
+    height: 100%;
+    width: calc(100% - 338px);
+    margin-left: 24px;
+    margin-top: -24px;
+    position: relative;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar-track-piece:end {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-track-piece:start {
+      background: transparent;
+      margin-top: 24px;
+    }
+  }
+
+}
+
+.to__top {
+  position: absolute;
+  right: 24px;
+  margin-left: auto;
+  bottom: 24px;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  background: #F0F0F3;
+  box-shadow: -2px -2px 6px #FFFFFF, 2px 2px 6px #AEAEC067;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+
+  &__icon {
+    width: 26px;
+    height: 26px;
+  }
+
+ @extend %hover__btn__inset;
+}

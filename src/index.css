@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* font-size: $fz; */
+}
+
+body {
+  /* font-family: $ff_A;
+  background: $white;
+  color: $main_c; */
+  overflow: hidden;
+}
+
+.add_wallet_modal_container{
+  background: none !important;
+  border: none !important;
+    padding:none !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: auto !important;
+}

@@ -1,0 +1,62 @@
+.logo {
+  width: 32px;
+  height: 36px;
+  margin-top: 24px;
+  margin-bottom: 45px;
+
+}
+
+.nav {
+  width: 96px;
+  height: 100vh;
+  background: #F0F0F3;
+  box-shadow: inset 0 3px 6px #00000029, 3px 0 6px #43607926;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+
+  &__block {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    margin-bottom: 10px;
+    &.trash{
+      margin-top: auto;
+    }
+  }
+
+  &__link {
+    font-size: 30px;
+    text-decoration: none;
+    padding: 16px;
+    display: inline-flex;
+    color: #7e92a3;
+    transition: all 0.4s;
+    width: 64px;
+    height: 64px;
+    align-items: center;
+    justify-content: center;
+    &:hover,
+    &.active {
+      background: #F0F0F3;
+      box-shadow: inset -3px -3px 3px #FFFFFFB2,  inset 0px 3px 6px #00000029, 3px 0px 6px #43607926;
+      border-radius: 12px;
+      color: #2267a4;
+      .trash__icon{
+        filter: brightness(0) saturate(100%) invert(33%) sepia(7%) saturate(5984%) hue-rotate(169deg) brightness(102%) contrast(91%);
+
+      }
+    }
+  }
+}
+.trash__icon{
+  height: 25px;
+}

@@ -1,0 +1,128 @@
+.dropdown {
+  position: relative;
+  width: 272px;
+
+  &.open {
+    .dropdown__selected {
+      box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+
+      .dropdown__arrow {
+        transform: rotate(-180deg);
+      }
+    }
+
+  }
+}
+
+.dropdown__selected {
+  height: 48px;
+  width: 100%;
+  background: #EDEDEF;
+  box-shadow: -3px -3px 9px #FFFFFF, 3px 3px 9px #AEAEC067;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.dropdown__arrow {
+  display: flex;
+  right: 25px;
+  position: absolute;
+}
+
+.dropdown__body {
+  background: #F0F0F3;
+  box-shadow: 0 5px 15px #38465241;
+  border-radius: 0 0 20px 20px;
+  padding: 35px 16px 16px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  top: 25px;
+}
+
+.dropdown__copy {
+  width: 100%;
+  border-radius: 80px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #A9B6C1;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+}
+
+.dropdown__copy__icon__wrapper {
+  width: 32px;
+  height: 32px;
+  box-shadow: -3px -3px 9px #FFFFFF, 3px 3px 9px #AEAEC067;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+.dropdown__sub {
+  margin-top: 16px;
+  position: relative;
+}
+
+.dropdown__sub__selected {
+  height: 48px;
+  width: 100%;
+  background: #EDEDEF;
+  box-shadow: -3px -3px 9px #FFFFFF, 3px 3px 9px #AEAEC067;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+
+  &.open {
+    box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+    .dropdown__arrow {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.dropdown__sub__body {
+  position: absolute;
+  box-shadow: 0 5px 15px #38465241;
+  border-radius: 0 0 25px 25px;
+  background: #F0F0F3;
+  width: 100%;
+  top: 25px;
+  padding: 35px 16px 16px;
+}
+
+.dropdown__sub__item {
+  color: #364048;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid #A9B6C1;
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 3px;
+  }
+  &:first-child{
+    padding-top: 0;
+  }
+}

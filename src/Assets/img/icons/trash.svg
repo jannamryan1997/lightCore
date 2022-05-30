@@ -1,0 +1,12 @@
+<svg id="Сгруппировать_503" data-name="Сгруппировать 503" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64.026" height="63.211" viewBox="0 0 64.026 63.211">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Контур_853" data-name="Контур 853" d="M6.413-4.341H51.231a6.4,6.4,0,0,1,6.4,6.4L54.943,48.211a6.4,6.4,0,0,1-6.4,6.4H10.43a6.4,6.4,0,0,1-6.4-6.4L.01,2.062A6.4,6.4,0,0,1,6.413-4.341Z" transform="translate(-0.01 4.341)" fill="#7e92a3"/>
+    </clipPath>
+  </defs>
+  <path id="Контур_852" data-name="Контур 852" d="M6.413-4.341H51.231a6.4,6.4,0,0,1,6.4,6.4L54.943,48.211a6.4,6.4,0,0,1-6.4,6.4H10.43a6.4,6.4,0,0,1-6.4-6.4L.01,2.062A6.4,6.4,0,0,1,6.413-4.341Z" transform="translate(3.207 8.598)" fill="#b4bdc4"/>
+  <g id="Группа_масок_8" data-name="Группа масок 8" transform="translate(3.218 4.257)" clip-path="url(#clip-path)">
+    <rect id="Прямоугольник_111" data-name="Прямоугольник 111" width="64.026" height="12.805" rx="3" transform="matrix(0.978, -0.208, 0.208, 0.978, -4.482, 9.055)" fill="#969ea3"/>
+  </g>
+  <rect id="Прямоугольник_112" data-name="Прямоугольник 112" width="64.026" height="12.005" rx="3" transform="translate(0)" fill="#b4bdc4"/>
+</svg>

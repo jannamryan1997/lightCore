@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  //scroll-behavior: smooth;
+  font-size: $fz;
+}
+
+body {
+  font-family: $ff_A;
+  background: $white;
+  color: $main_c;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  background: #F0F0F3;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.clear {
+  clear: both;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  display: block;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 4px 4px 4px #AEAEC033;
+  border-radius: 67px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+%hover__btn__inset {
+  transition: all 0.4s;
+
+  &:hover {
+    box-shadow: inset 3px 3px 3px #AEAEC033, inset -3px -3px 3px #FFFFFFB2;
+  }
+}
+
+%hover__btn {
+  transition: all 0.4s;
+
+  &:hover {
+    box-shadow: -3px -3px 9px 0 #fff, 3px 3px 9px 0 rgba(174, 174, 192, 0.4);
+  }
+}
+
+%hover__btn__blue {
+  transition: all 0.4s;
+
+  &:hover {
+    background: #1762A2;
+  }
+}
+
+%active__btn__inset {
+  transition: all 0.4s;
+  box-shadow: inset 3px 3px 3px #AEAEC033, inset -3px -3px 3px #FFFFFFB2;
+}
+
+%active__btn {
+  transition: all 0.4s;
+  box-shadow:  3px 3px 3px #AEAEC033,  -3px -3px 3px #FFFFFFB2;
+}
+.align-items-center{
+  align-items: center;
+}

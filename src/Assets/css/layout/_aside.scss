@@ -1,0 +1,248 @@
+.aside {
+  width: 338px;
+  padding: 24px;
+  overflow-y: auto;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.add__wallet__btn {
+  box-shadow: -4px -4px 12px #FFFFFF, 4px 4px 12px #AEAEC067;
+  background-color: #f0f0f3;
+  border-radius: 24px;
+  width: 288px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding-left: 24px;
+  padding-right: 47px;
+  justify-content: space-between;
+  font-size: 24px;
+  color: #364048;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: all 0.4s;
+
+  &:hover {
+    box-shadow: inset 10px 10px 10px #AEAEC033, inset -10px -10px 10px #FFFFFFB2;
+  }
+  &.defi{
+    padding: 0 16px;
+    .add__wallet__btn__plus{
+      width: 88px;
+      height: 56px;
+      border-radius: 157px;
+      padding:  0 8px;
+      margin-right: 12px;
+    }
+  }
+}
+
+.add__wallet__btn__plus {
+  background: #F0F0F3;
+  box-shadow: inset 10px 10px 10px #AEAEC033, inset -10px -10px 10px #FFFFFFB2;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.defi {
+    width: auto;
+  }
+
+  .fox {
+    width: 32px;
+    height: 25px;
+    margin-right: 8px;
+  }
+
+  .coinbase {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.add__wallet__btn__plus__bg {
+  background: #1762A2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.44), 10px 10px 30px rgba(174, 174, 192, 0.44), inset -2px -2px 2px #1D1D1D41, -10px -10px 30px #FFFFFF;
+  position: relative;
+
+  span {
+    width: 12px;
+    height: 2px;
+    background: #F0F0F3;
+    border-radius: 2px;
+    position: absolute;
+
+    &:nth-child(2) {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.aside__wallet__title {
+  color: #364048;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: 39px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.aside__chart__wrapper {
+  position: relative;
+  margin-bottom: 45px;
+  height: 315px;
+
+  &.cold {
+    .card__risk__chart__min {
+      border-color: #4DC7B5;
+    }
+
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #4DC7B5;
+    }
+
+    .card__risk__info:hover {
+      background: #4DC7B5;
+      color: #ffffff;
+    }
+  }
+
+  &.hold {
+    .card__risk__chart__min {
+      border-color: #EFB661;
+    }
+
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #EFB661;
+    }
+
+    .card__risk__info:hover {
+      background: #EFB661;
+      color: #ffffff;
+    }
+  }
+
+  &.risky {
+    .card__risk__chart__min {
+      border-color: #F27281;
+    }
+
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #F27281;
+    }
+
+    .card__risk__info:hover {
+      background: #F27281;
+      color: #ffffff;
+    }
+  }
+
+  .card__risk__chart {
+    width: 232px;
+    height: 232px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .card__risk__chart__min {
+    width: 178px;
+    height: 178px;
+    border-width: 20px;
+  }
+
+  .card__risk__chart__number {
+    font-size: 35px;
+  }
+
+  .card__risk__chart__number__of {
+    font-size: 19px;
+  }
+
+  .card__risk__alert {
+    width: 90px;
+    height: 90px;
+    top: unset;
+    bottom: 6px;
+    right: -8px;
+  }
+
+  .card__risk__alert__title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .card__risk__alert__number {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.aside__tabs {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 34px;
+
+  &:after {
+    content: "";
+    width: calc(100% + 24px);
+    left: -12px;
+    bottom: -10px;
+    height: 3px;
+    box-shadow: inset 4px 4px 4px #AEAEC033, inset -4px -4px 0px #FFFFFFB2;
+    position: absolute;
+    background: #F0F0F3;
+
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #9CA3A8;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    position: relative;
+    display: flex;
+
+    &:after {
+      content: "";
+      width: 0;
+      transition: all 0.4s;
+      height: 3px;
+      background: #2658AA;
+      box-shadow: inset -2px -2px 2px #1D1D1D41, -10px -10px 30px #FFFFFF;
+      border-radius: 67px;
+      position: absolute;
+      bottom: -10px;
+      z-index: 1;
+    }
+
+    &:hover,
+    &.active {
+      color: #364048;
+
+      &:after {
+        width: 100%;
+      }
+
+    }
+  }
+}

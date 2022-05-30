@@ -1,0 +1,139 @@
+.card {
+  &.defi {
+    padding-top: 8px;
+    position: relative;
+
+    .card__header .row {
+      align-items: center;
+    }
+
+    .card__wallet__row {
+      background-color: transparent;
+    }
+
+    .card__wallet__rates {
+      color: #889096;
+    }
+
+    .card__wallet__usd {
+      color: #364048;
+      font-weight: bold;
+    }
+  }
+}
+
+.card__product__stake__amount {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: -100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 408px;
+  background: #F0F0F3;
+  box-shadow: 10px 10px 30px #6F6F8467;
+  border-radius: 12px;
+  z-index: 2;
+  padding: 24px 16px 16px 24px;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.card__product__stake__amount__input__wrapper {
+  width: 224px;
+  height: 48px;
+  border-radius: 80px;
+  box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+  background: #EDEDEF;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+
+}
+
+.card__product__stake__amount__input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #364048;
+}
+
+.card__product__stake__amount__max {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  width: 128px;
+  height: 48px;
+  color: #364048;
+  border-radius: 24px;
+  box-shadow: -3px -3px 9px 0 #fff, 3px 3px 9px 0 rgba(174, 174, 192, 0.4);
+  background-color: #ededef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  outline: none;
+  @extend %hover__btn__inset;
+}
+
+.card__product__stake__amount__confirm {
+  width: 100%;
+  height: 40px;
+  border-radius: 67px;
+  box-shadow: -5px -5px 15px 0 #fff, 5px 5px 15px 0 rgba(174, 174, 192, 0.4);
+  background-color: #214175;
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  margin-top: 8px;
+  @extend %hover__btn__blue;
+}
+
+.unstacking {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #F0F0F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -3px -3px 9px #FFFFFF, 3px 3px 9px #AEAEC067;
+  color: #889096;
+  font-size: 16px;
+  line-height: 18px;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  right: -13px;
+  bottom: -18px;
+  transition: all 0.4s;
+
+  span {
+    color: #F27281;
+  }
+
+  &.active,
+  &:hover {
+    box-shadow: unset;
+    color: rgba(#889096, 0.49);
+    span{
+      color: rgba(#889096, 0.49);
+    }
+  }
+}

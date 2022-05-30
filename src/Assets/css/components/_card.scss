@@ -1,0 +1,456 @@
+.card {
+  max-width: 312px;
+  width: 100%;
+  height: 488px;
+  background: #F0F0F3;
+  box-shadow: -8px -8px 24px #FFFFFF, 8px 8px 24px #AEAEC067;
+  border-radius: 24px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  padding: 24px;
+
+  &.cold {
+    .card__risk__chart__min {
+      border-color: #4DC7B5;
+    }
+
+    .card__product__number,
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #4DC7B5;
+    }
+
+    .card__risk__info:hover {
+      background: #4DC7B5;
+      color: #ffffff;
+    }
+  }
+
+  &.hold {
+    .card__risk__chart__min {
+      border-color: #EFB661;
+    }
+
+    .card__product__number,
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #EFB661;
+    }
+
+    .card__risk__info:hover {
+      background: #EFB661;
+      color: #ffffff;
+    }
+  }
+
+  &.risky {
+    .card__risk__chart__min {
+      border-color: #F27281;
+    }
+
+    .card__product__number,
+    .card__risk__chart__number__of,
+    .card__risk__chart__number {
+      color: #F27281;
+    }
+
+    .card__risk__info:hover {
+      background: #F27281;
+      color: #ffffff;
+    }
+  }
+
+  &__header {
+    margin-bottom: 8px;
+
+    .row {
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+
+  }
+
+  &__settings {
+    border: 0;
+    width: 24px;
+    height: 24px;
+    background: #F0F0F3;
+    border-radius: 50%;
+    box-shadow: -2px -2px 2px #FFFFFF, 2px 2px 2px #AEAEC067;
+    color: #364048;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    @extend %hover__btn__inset;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #364048;
+    text-align: center;
+
+    span {
+      display: block;
+    }
+
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    border: 0;
+    background-color: transparent;
+    position: relative;
+
+    span {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      width: 2px;
+      background: #364048;
+      transform: rotate(45deg);
+
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__price {
+    height: 48px;
+    width: 100%;
+    box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4DC7B5;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  &__wallet {
+    width: 100%;
+    height: 108px;
+    box-shadow: inset 5px 5px 5px #AEAEC033, inset -5px -5px 5px #FFFFFFB2;
+    border-radius: 17px;
+    background: rgba(#F0F0F3, 0.05);
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 34px;
+
+    &::-webkit-scrollbar-track {
+      display: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      display: none;
+    }
+
+  }
+
+  &__wallet__row {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    padding: 0 15px;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+
+    &:nth-child(2n + 1) {
+      background: rgba(#848484, 0.05);
+    }
+  }
+
+  &__wallet__usd,
+  &__wallet__rates {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #364049;
+  }
+
+  &__wallet__usd {
+    color: #889096;
+    font-weight: 400;
+  }
+
+  &__risk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__risk__title {
+    color: #717679;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 15px;
+  }
+
+  &__risk__chart {
+    width: 144px;
+    height: 144px;
+    box-shadow: inset 6px 6px 6px #AEAEC033, inset -6px -6px 6px #FFFFFFB2;
+    background: #F0F0F3;
+    border-radius: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  &__risk__chart__min {
+    width: 108px;
+    height: 108px;
+    box-shadow: inset 0 3px 6px #00000029, 0 3px 6px #00000029;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__risk__chart__number {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  &__risk__chart__number__of {
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__risk__alert {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #F0F0F3;
+    box-shadow: -3px -3px 9px #FFFFFF, 3px 3px 9px #AEAEC067;
+    position: absolute;
+    right: 0;
+    top: 19px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s;
+
+    &.active {
+      @extend %active__btn__inset;
+    }
+
+    @extend %hover__btn__inset;
+  }
+
+  &__risk__alert__title {
+    color: #889096;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  &__risk__alert__number {
+    color: #f27281;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  &__risk__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #EBEBEB;
+    border-radius: 50%;
+    color: #cbcbcb;
+    font-size: 12px;
+    position: absolute;
+    bottom: -10px;
+    left: 48px;
+    box-shadow: -2px -2px 2px #FFFFFF, 2px 2px 2px #9191A567;
+    transition: all 0.4s;
+    cursor: pointer;
+  }
+
+  &__apy {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 2px 2px 2px #AEAEC033, inset -2px -2px 2px #FFFFFFB2;
+
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 15px;
+      color: #364048;
+    }
+
+    &__percent {
+      color: #889096;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 15px;
+    }
+  }
+
+  &__product__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+
+    &:after {
+      content: "";
+      width: 100%;
+      border-radius: 67px;
+      height: 3px;
+      box-shadow: inset 10px 10px 10px #AEAEC033, inset -10px -10px 10px #FFFFFFB2;
+    }
+  }
+
+  &__product__title {
+    color: #889096;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  &__product__number {
+    font-size: 24px;
+    line-height: 32px;
+    text-shadow: 0 3px 6px #4DC7B534;
+    font-weight: bold;
+  }
+
+  &__product__unstacked,
+  &__product__stake {
+    background: #F0F0F3;
+    box-shadow: inset -5px -5px 5px #7F7FAD21, -5px -5px 15px #FFFFFF, inset 5px 5px 5px #FFFFFF, 5px 5px 15px #8E8EB533;;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 112px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    line-height: 22px;
+    @extend %hover__btn__inset;
+  }
+
+  &__product__stake__block {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 14px;
+  }
+
+  &__product__unstacked {
+    color: #BA8557;
+  }
+
+  &__product__stake {
+    color: #5781BA;
+  }
+}
+
+.aside__card {
+  background: #F0F0F3;
+  box-shadow: -5px -5px 15px #FFFFFF, 5px 5px 15px #AEAEC067;
+  border-radius: 24px;
+  padding: 21px 24px 15px;
+  position: relative;
+  margin-bottom: 24px;
+
+  &.cold {
+    .aside__card__progress__bg {
+      background: #28B663;
+    }
+  }
+
+  &.hot {
+    .aside__card__progress__bg {
+      background: #EFB661;
+    }
+  }
+
+  &__title {
+    color: #9CA3A8;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 8px;
+  }
+
+  &__numbers {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+
+    span {
+      font-size: 14px;
+      display: flex;
+      margin-bottom: -10px;
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    height: 8px;
+    box-shadow: inset 4px 4px 4px #AEAEC033, inset -4px -4px 0px #FFFFFFB2;
+    border-radius: 67px;
+    background: #F0F0F3;
+
+    &__bg {
+      height: 100%;
+      box-shadow: inset -2px -2px 2px #1D1D1D41, -10px -10px 30px #FFFFFF, inset 4px 4px 4px #AEAEC033;
+      border-radius: 67px;
+      transition: all 0.4s;
+    }
+  }
+
+  .card__risk__alert {
+    position: relative;
+    margin-left: auto;
+    font-weight: 600;
+    width: 64px;
+    height: 64px;
+    top: 4px;
+    right: -11px;
+  }
+
+  .card__risk__alert__number,
+  .card__risk__alert__title {
+    line-height: 16px;
+    font-size: 16px;
+  }
+}

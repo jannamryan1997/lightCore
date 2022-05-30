@@ -1,0 +1,25 @@
+@media (pointer: coarse) {
+  @import "touch";
+}
+
+@media only screen and (max-width: 1700px) {
+  @import "mx1440";
+}
+
+@media only screen and (max-width: 1365px) {
+  @import "mx1366";
+}
+@media only screen and (max-width: 1200px) {
+  @import "mx1200";
+}
+@media only screen and (max-width: 992px) {
+  @import "mx992";
+}
+
+@media only screen and (max-width: 767px) {
+  @import "mx767";
+}
+
+@media only screen and (max-width: 374px) {
+  @import "mx374";
+}
