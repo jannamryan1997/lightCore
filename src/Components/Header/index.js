@@ -2,11 +2,11 @@ import { React } from 'react';
 
 import user from '../../Assets/img/user/avatar.png';
 
-export function Header() {
+export function Header({title}) {
     return (
         <header id="header" className="header">
             <div className="row">
-                <h2 className="header__title">Wallets Shield</h2>
+                <h2 className="header__title">{title}</h2>
                 <div className="header__right">
                     <div className="notification">
                         <div className="notification__btn">

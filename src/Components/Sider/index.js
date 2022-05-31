@@ -1,4 +1,5 @@
 import { React } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import logo from '../../Assets/img/site/logo.svg';
 import trash from '../../Assets/img/icons/trash.svg';
@@ -14,24 +15,24 @@ export function Sider() {
             </figure>
             <ul className="nav__block">
                 <li className="nav__list">
-                    <a href="#" className="nav__link active">
-                        <i className="icon-wallet"></i>
-                    </a>
+                <NavLink  to='/wallet-shield'  className="nav__link" activeClassName="active" >
+                <i className="icon-wallet"></i>
+                </NavLink >
                 </li>
                 <li className="nav__list">
-                    <a href="#" className="nav__link">
-                        <i className="icon-dfi-shield"></i>
-                    </a>
+                     <NavLink to='/defi-shield'  className="nav__link"  activeClassName="active">
+                     <i className="icon-dfi-shield"></i>
+                </NavLink>
                 </li>
                 <li className="nav__list">
-                    <a href="#" className="nav__link">
-                        <i className="icon-investment"></i>
-                    </a>
+                      <NavLink to='/'  className="nav__link"  activeClassName="active">
+                      <i className="icon-investment"></i>
+                </NavLink>
                 </li>
                 <li className="nav__list">
-                    <a href="#" className="nav__link">
-                        <i className="icon-nft"></i>
-                    </a>
+                       <NavLink to='/'  className="nav__link"  activeClassName="active">
+                       <i className="icon-nft"></i>
+                </NavLink>
                 </li>
                 <li className="nav__list trash">
                     <a href="#" className="nav__link">

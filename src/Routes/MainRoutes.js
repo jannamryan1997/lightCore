@@ -1,6 +1,6 @@
 import { React } from "react";
 import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom';
-import { Main,WalletsShield } from '../Pages/index';
+import { Main,WalletsShield,DeFiShield } from '../Pages/index';
 
 export function MainRoutes() {
     return (
@@ -9,6 +9,7 @@ export function MainRoutes() {
                 <Route path="/" element={<Main/>}>
                     <Route path="/" element={<Navigate  to="/wallet-shield"/>}/>
                     <Route path="/wallet-shield" element={<WalletsShield />} />
+                    <Route path="/defi-shield" element={<DeFiShield/>}/>
                 </Route>
             </Routes>
 

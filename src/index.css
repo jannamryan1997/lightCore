@@ -30,11 +30,7 @@ body {
   overflow: hidden;
 }
 
-.add_wallet_modal_container{
+.ReactModal__Overlay{
   background: none !important;
-  border: none !important;
-    padding:none !important;
-    width: 100% !important;
-    height: auto !important;
-    margin: auto !important;
+  z-index: 9 !important;
 }
