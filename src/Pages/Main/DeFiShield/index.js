@@ -1,8 +1,11 @@
-import { React } from 'react';
+import { React, useState } from 'react';
 
 import { AddDefiShild, Header, DefiCard } from '../../../Components';
 
 export function DeFiShield() {
+
+    const [defiCard, setDefiCard] = useState([{ id: 1, title: 'cold' }, { id: 2, title: 'risk' }, { id: 3, title: 'risk' }])
+
     return (
         <>
             <Header title={'DeFi Shield'} />
@@ -10,7 +13,12 @@ export function DeFiShield() {
                 <div className="content">
                     <div className="row">
                         {/* <!--Todo react-circular-progressbar  https://www.npmjs.com/package/react-circular-progressbar--> */}
-                        <DefiCard />
+                        {
+                            defiCard.map((element) => {
+                                return <DefiCard key={element.id} element={element}/>
+                            })
+                        }
+
                     </div>
                 </div>
                 <AddDefiShild />

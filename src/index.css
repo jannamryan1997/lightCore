@@ -34,3 +34,7 @@ body {
   background: none !important;
   z-index: 9 !important;
 }
+
+.card__product__stake_active{
+  box-shadow: inset 3px 3px 3px rgb(174 174 192 / 20%), inset -3px -3px 3px rgb(255 255 255 / 70%) !important;
+}
