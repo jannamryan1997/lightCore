@@ -1,8 +1,10 @@
 import { React } from 'react';
+import { useNavigate } from 'react-router';
 
 import user from '../../Assets/img/user/avatar.png';
 
 export function Header({title}) {
+    const navigate = useNavigate();
     return (
         <header id="header" className="header">
             <div className="row">
@@ -19,7 +21,9 @@ export function Header({title}) {
                         <p className="user__name">Elon Musk</p>
                     </div>
                     <div className="setting__btn">
-                        <i className="icon-setting"></i>
+                        <i className="icon-setting" onClick={(()=>{
+                           navigate('/settings');
+                        })}></i>
                     </div>
                 </div>
             </div>
