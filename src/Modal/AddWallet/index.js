@@ -19,7 +19,7 @@ export function AddWallet({ closeModal }) {
                         <img src={arrow} alt="" className="wallet__type__arrow" />
                         <div className="wallet__type__item selected">Cold Wallet</div>
                        
-                                {/* <div className="wallet__type__item">Hot Wallet</div>  */}
+                                <div className="wallet__type__item">Hot Wallet</div> 
                     </div>
                     <div className="wallet__type__btn">Trezor</div>
                     <button className="wallet__type__save" onClick={(() => {

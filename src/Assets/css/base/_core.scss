@@ -14,6 +14,14 @@ body {
   background: $white;
   color: $main_c;
   overflow: hidden;
+  &.setting__body{
+    .main,
+    .wrapper{
+      overflow: unset;
+      height: auto;
+    }
+    overflow: auto;
+  }
 }
 
 .wrapper {
