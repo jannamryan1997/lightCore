@@ -7,6 +7,7 @@ import { WalletCard } from '../../../Components';
 import { Aside,Header} from '../../../Components';
 import { AddWallet } from '../../../Modal/index';
 import Modal from 'react-modal';
+import { useSelector } from 'react-redux';
 
 
 export function WalletsShield() {
@@ -40,6 +41,11 @@ export function WalletsShield() {
     function closeModal() {
       setIsOpen(false);
     }
+
+    const wallet = useSelector((state)=>{
+        console.log(state.wallet);
+        return state.wallet;
+    }) 
 
     return (
         <>

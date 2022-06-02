@@ -1,0 +1,1 @@
+export {WalletReducer} from './WalletsReducer';
