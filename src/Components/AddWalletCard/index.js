@@ -23,6 +23,10 @@ export function AddWalletCard({ element, deleteItem }) {
 
     const [copyFormValue, setCopyFormValue] = useState('Copy from Wallet');
 
+    const [openAssetsvalue, setOpenAssetsvalue] = useState(false);
+    const [assetsValue, setAssetsValue] = useState('BTC');
+    const [assetsItem, setAssetsItem] = useState([{ id: 1, value: 'Hot Wallet', }, { id: 2, value: 'Cold Wallet' }, { id: 2, value: 'BTC' }]);
+
     return (
         <div className="modal__body">
             <div className="wallet__addresses">
@@ -32,13 +36,33 @@ export function AddWalletCard({ element, deleteItem }) {
                     })}>
                         <span></span><span></span>
                     </span>
-                    <div className="wallet__addresses__top__left">
-                        <div className="wallet__addresses__top__label">Asset</div>
-                        <div className="wallet__type">
-                            <img src={arrow} alt="" className="wallet__type__arrow" />
-                            <div className="wallet__type__item selected">BTC</div>
+                    <OutsideClickHandler onOutsideClick={(event) => {
+                        event.stopPropagation()
+                        setOpenAssetsvalue(false)
+                    }}>
+                        <div className="wallet__addresses__top__left">
+                            <div className="wallet__addresses__top__label">Asset</div>
+                            <div className="wallet__type"onClick={(() => {
+                                    setOpenAssetsvalue(!openAssetsvalue)
+                                })}>
+                                <img src={arrow} alt="" className="wallet__type__arrow"  />
+                                <div className="wallet__type__item selected">{assetsValue}</div>
+                                {
+                                    openAssetsvalue ?
+                                        <> {
+                                            assetsItem.map((element) => {
+                                                return <div className="wallet__type__item" key={Math.random()} onClick={(() => {
+                                                    setAssetsValue(element?.value)
+                                                })}>{element?.value}</div>
+                                            })
+                                        }
+                                        </> : null
+                                }
+
+                            </div>
                         </div>
-                    </div>
+                    </OutsideClickHandler>
+
                     <div className="wallet__addresses__top__middle">
                         <div className="wallet__addresses__top__label">Wallet Addresses</div>
                         <div className="wallet__addresses__top__input__wrapper">
@@ -75,7 +99,7 @@ export function AddWalletCard({ element, deleteItem }) {
                                             <span></span><span></span>
                                         </span>
                                         <OutsideClickHandler onOutsideClick={(event) => {
-                                             event.stopPropagation()
+                                            event.stopPropagation()
                                             setOpenForm(false)
                                         }}>
                                             <div className={'dropdown' + ' ' + (openForm ? 'open' : 'dropdown')}>

@@ -29,9 +29,9 @@ export function AddWallet({ closeModal }) {
                 </div>
                 {
                     addWalletCard.map((element) => {
-                        return <AddWalletCard key={element?.id} element={element} deleteItem={((id) => {
-                            console.log(id);
+                        return <AddWalletCard key={element.id} element={element} deleteItem={((id) => {
                             setAddWalletCard(addWalletCard.filter((element) => element.id != id))
+                       
                         })} />
                     })
                 }
