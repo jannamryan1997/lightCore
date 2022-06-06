@@ -1,10 +1,59 @@
-import { React, useLayoutEffect, useState } from 'react';
+import { React, useState } from 'react';
 
 import OutsideClickHandler from 'react-outside-click-handler';
 
+import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
+
+import Slider from 'react-rangeslider';
+
+import 'react-rangeslider/lib/index.css';
+
 export function DefiCard({ element }) {
+    const [value, setValue] = useState(25);
+    const [openProgress, setOpenProgress] = useState(false);
+    const handleChange = (value) => {
+        setValue(value)
+    }
+
     const [openStake, setOpenStake] = useState(false);
     const [openRiskStake, setopenRiskStake] = useState(false);
+
+    const coldprops = {
+        percent: 78, // is require
+        colorSlice: '#4DC7B5',
+        colorCircle: "rgb(174 174 192 / 10%)",
+        fontColor: '#4DC7B5',
+        fontSize: "1.625em",
+        fontWeight: 900,
+        size: 108,
+        boxShadow: 'inset 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%)',
+        unit: "%",
+        textPosition: "0.35em",
+        animationOff: false,
+        inverse: false,
+        round: false,
+        number: true,
+    };
+
+    const riskprops = {
+        percent: 78, // is require
+        colorSlice: '#F27281',
+        colorCircle: "rgb(174 174 192 / 10%)",
+        fontColor: '#F27281',
+        fontSize: "1.625em",
+        fontWeight: 900,
+        size: 108,
+        boxShadow: 'inset 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 16%)',
+        unit: "%",
+        textPosition: "0.35em",
+        animationOff: false,
+        inverse: false,
+        round: false,
+        number: true,
+    }
+
+
+
     return (
         <>
 
@@ -44,7 +93,7 @@ export function DefiCard({ element }) {
                                 setOpenStake(false)
                             }}>
                                 <div className="card__product__stake__block">
-                                    <button  className={'card__product__stake' + ' ' + (openStake ? 'card__product__stake_active' : 'card__product__stake')} onClick={(() => {
+                                    <button className={'card__product__stake' + ' ' + (openStake ? 'card__product__stake_active' : 'card__product__stake')} onClick={(() => {
                                         setOpenStake(!openStake)
                                     })}>Stake</button>
                                     <button className="card__product__unstacked">Unstake</button>
@@ -62,15 +111,32 @@ export function DefiCard({ element }) {
                             </OutsideClickHandler>
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
-                                <div className="card__risk__alert">
+                                <div  className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
+                                onClick={(() => {
+                                    setOpenProgress(!openProgress)
+                                })}>
                                     <p className="card__risk__alert__title">Alert</p>
-                                    <p className="card__risk__alert__number">60</p>
+                                    <p className="card__risk__alert__number">{value}</p>
                                 </div>
+                                {
+                                    openProgress ? 
+                                    <div class="card__risk__range__hr active">
+                                        <Slider
+                                            min={0}
+                                            max={100}
+                                            value={value}
+                                            orientation='vertical'
+                                            onChange={handleChange}
+                                        />
+                                    </div> : null
+                                }
                                 <div className="card__risk__chart">
-                                    <div className="card__risk__chart__min">
+                                    {/* <div className="card__risk__chart__min">
                                         <p className="card__risk__chart__number">87</p>
                                         <p className="card__risk__chart__number__of">of 100</p>
-                                    </div>
+                                    </div> */}
+                                    <CircularProgressBar {...coldprops}>
+                                    </CircularProgressBar>
                                 </div>
                                 <div className="card__risk__info">
                                     <i className="icon-info-icon"></i>
@@ -115,34 +181,52 @@ export function DefiCard({ element }) {
                                 setopenRiskStake(false)
                             }}>
                                 <div className="card__product__stake__block">
-                                    <button  className={'card__product__stake' + ' ' + (openRiskStake ? 'card__product__stake_active' : 'card__product__stake')}   
-                                    onClick={(() => {
-                                        setopenRiskStake(!openRiskStake)
-                                    })}>Stake</button>
+                                    <button className={'card__product__stake' + ' ' + (openRiskStake ? 'card__product__stake_active' : 'card__product__stake')}
+                                        onClick={((event) => {
+                                            event.stopPropagation()
+                                            setopenRiskStake(!openRiskStake)
+                                        })}>Stake</button>
                                     <button className="card__product__unstacked">Unstake</button>
-                                    {openRiskStake?
+                                    {openRiskStake ?
                                         <div className="card__product__stake__amount open">
                                             <div className="card__product__stake__amount__input__wrapper">
                                                 <input placeholder="Amount" type="text" className="card__product__stake__amount__input" />
                                             </div>
                                             <button className="card__product__stake__amount__max">Max Amount</button>
                                             <button className="card__product__stake__amount__confirm">Confirm</button>
-                                        </div>:null
+                                        </div> : null
                                     }
 
                                 </div>
                             </OutsideClickHandler>
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
-                                <div className="card__risk__alert">
+                                <div   className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
+                                onClick={((event) => {
+                                    event.stopPropagation()
+                                    setOpenProgress(!openProgress)
+                                })}>
                                     <p className="card__risk__alert__title">Alert</p>
-                                    <p className="card__risk__alert__number">60</p>
+                                    <p className="card__risk__alert__number">{value}</p>
                                 </div>
+                                {
+                                    openProgress ? <div class="card__risk__range__hr active">
+                                        <Slider
+                                            min={0}
+                                            max={100}
+                                            value={value}
+                                            orientation='vertical'
+                                            onChange={handleChange}
+                                        />
+                                    </div> : null
+                                }
                                 <div className="card__risk__chart">
-                                    <div className="card__risk__chart__min">
+                                    {/* <div className="card__risk__chart__min">
                                         <p className="card__risk__chart__number">87</p>
                                         <p className="card__risk__chart__number__of">of 100</p>
-                                    </div>
+                                    </div> */}
+                                    <CircularProgressBar {...riskprops}>
+                                    </CircularProgressBar>
                                 </div>
                                 <div className="card__risk__info">
                                     <i className="icon-info-icon"></i>

@@ -250,6 +250,7 @@
     flex-direction: column;
     justify-content: center;
     transition: all 0.4s;
+    cursor: pointer;
 
     &.active {
       @extend %active__btn__inset;

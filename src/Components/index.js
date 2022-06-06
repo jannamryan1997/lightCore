@@ -5,4 +5,5 @@ export {AddWalletCard} from './AddWalletCard';
 export {Aside} from './Aside';
 export {WalletCard} from './WalletCard';
 export {AddDefiShild} from './AddDefiShild';
-export {DefiCard} from './DefiCard';   
+export {DefiCard} from './DefiCard';
+export {CurrentCard} from './CurrentCard';

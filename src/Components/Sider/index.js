@@ -7,6 +7,7 @@ import trash from '../../Assets/img/icons/trash.svg';
 
 export function Sider() {
     return (
+        <section>
         <nav className="nav">
             <figure className="logo">
                 <a href="#" className="logo__link">
@@ -15,22 +16,22 @@ export function Sider() {
             </figure>
             <ul className="nav__block">
                 <li className="nav__list">
-                <NavLink  to='/wallet-shield'  className="nav__link" activeClassName="active" >
+                <NavLink  activeClassName="active" to='/wallet-shield'  className="nav__link" >
                 <i className="icon-wallet"></i>
                 </NavLink >
                 </li>
                 <li className="nav__list">
-                     <NavLink to='/defi-shield'  className="nav__link"  activeClassName="active">
+                     <NavLink  activeClassName="active" to='/defi-shield'  className="nav__link" >
                      <i className="icon-dfi-shield"></i>
                 </NavLink>
                 </li>
                 <li className="nav__list">
-                      <NavLink to='/'  className="nav__link"  activeClassName="active">
+                      <NavLink activeClassName="active" to='/'  className="nav__link"  >
                       <i className="icon-investment"></i>
                 </NavLink>
                 </li>
                 <li className="nav__list">
-                       <NavLink to='/'  className="nav__link"  activeClassName="active">
+                       <NavLink activeClassName="active" to='/'  className="nav__link"  >
                        <i className="icon-nft"></i>
                 </NavLink>
                 </li>
@@ -42,5 +43,6 @@ export function Sider() {
                 </li>
             </ul>
         </nav>
+         </section>
     )
 }

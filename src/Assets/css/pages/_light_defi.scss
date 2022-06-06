@@ -1,0 +1,123 @@
+.card {
+  &.light {
+    padding-top: 25px;
+    position: relative;
+
+    .card__header{
+      margin-bottom: 30px;
+      position: relative;
+      .row {
+        align-items: center;
+        justify-content: center;
+      }
+      .card__close{
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+    }
+
+    .card__wallet__row {
+      background-color: transparent;
+    }
+
+    .card__wallet__rates {
+      color: #889096;
+    }
+
+    .card__wallet__usd {
+      color: #364048;
+      font-weight: bold;
+    }
+    .card__title{
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+    }
+    .card__product__arrow{
+      margin-left: 10px;
+    }
+  }
+}
+
+
+.card__risk__range {
+  width: 8px;
+  height: 176px;
+  //box-shadow: inset 3px 3px 3px #AEAEC033, inset -3px -3px 3px #FFFFFFB2;
+ // border-radius: 88px;
+ // background: #F0F0F3;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  display: none; }
+  .card__risk__range.active {
+    display: block; }
+.card__risk__range__bg {
+  width: 100%;
+  height: 50%;
+  background: #F27281;
+  box-shadow: inset 3px 3px 3px #40405053;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 0; }
+.card__risk__range__btn {
+  width: 24px;
+  height: 24px;
+  background: #F0F0F3;
+  box-shadow: -2px -2px 6px #FFFFFF, 2px 2px 6px #36364D67;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  cursor: pointer; }
+  .card__risk__range__btn__min {
+    background: #F27281;
+    width: 16px;
+    display: flex;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 2px rgba(54, 54, 70, 0.6), inset -2px -2px 2px rgba(255, 255, 255, 0.6); }
+.card__risk__range__hr {
+  width: 176px;
+  height: 8px;
+  //box-shadow: inset 3px 3px 3px #AEAEC033, inset -3px -3px 3px #FFFFFFB2;
+  border-radius: 88px;
+ // background: #F0F0F3;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  display: none; }
+  .card__risk__range__hr.active {
+    display: block; }
+.card__risk__range__bg__hr {
+  width: 50%;
+  height: 100%;
+  background: #F27281;
+  box-shadow: inset 3px 3px 3px #40405053;
+  border-radius: 20px 0 0 20px;
+  position: absolute;
+  left: 0; }
+.card__risk__range__btn__hr {
+  width: 24px;
+  height: 24px;
+  background: #F0F0F3;
+  box-shadow: -2px -2px 6px #FFFFFF, 2px 2px 6px #36364D67;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  cursor: pointer; }
+  .card__risk__range__btn__hr__min {
+    background: #F27281;
+    width: 16px;
+    display: flex;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: inset 2px 2px 2px rgba(54, 54, 70, 0.6), inset -2px -2px 2px rgba(255, 255, 255, 0.6); }

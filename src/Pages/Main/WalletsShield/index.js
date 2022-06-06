@@ -8,6 +8,8 @@ import { Aside,Header} from '../../../Components';
 import { AddWallet } from '../../../Modal/index';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
+import grid from '../../../Assets/img/icons/grid.svg';
+import list from '../../../Assets/img/icons/list.svg';
 
 
 export function WalletsShield() {
@@ -43,7 +45,6 @@ export function WalletsShield() {
     }
 
     const wallet = useSelector((state)=>{
-        console.log(state.wallet);
         return state.wallet;
     }) 
 
@@ -57,7 +58,6 @@ export function WalletsShield() {
                     {
                         walletCard.map((element) => {
                             return <WalletCard key={element?.id} element={element} deleteItem={((id) => {
-                                console.log(id);
                                 setWalletCard(walletCard.filter((element) => element.id != id))
                             })} />
                         })
@@ -67,6 +67,14 @@ export function WalletsShield() {
                 <a href="#header" className="to__top">
                     <img src={top} alt="top" className="to__top__icon" />
                 </a>
+                <div class="layout__block">
+                <div class="layout__grid">
+                    <img src={grid} alt="" class="layout__grid__icon"/>
+                </div>
+                <div class="layout__list">
+                    <img src={list} alt="" class="layout__list__icon"/>
+                </div>
+            </div>
             </div>
             
             <Aside openModal={((event)=>{

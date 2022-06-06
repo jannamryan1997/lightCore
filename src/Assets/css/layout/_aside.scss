@@ -18,7 +18,7 @@
   align-items: center;
   text-decoration: none;
   padding-left: 24px;
-  padding-right: 47px;
+  padding-right: 30px;
   justify-content: space-between;
   font-size: 24px;
   color: #364048;
@@ -192,6 +192,11 @@
     font-size: 20px;
     line-height: 26px;
   }
+  .card__risk__range__hr{
+    top: unset;
+    bottom: 47px;
+    left: 0;
+  }
 }
 
 .aside__tabs {
@@ -244,5 +249,83 @@
       }
 
     }
+  }
+}
+.aside__card {
+  background: #F0F0F3;
+  box-shadow: -5px -5px 15px #FFFFFF, 5px 5px 15px #AEAEC067;
+  border-radius: 24px;
+  padding: 21px 24px 15px;
+  position: relative;
+  margin-bottom: 24px;
+  &.cold {
+    .aside__card__progress__bg {
+      background: #28B663;
+    }
+  }
+
+  &.hot {
+    .aside__card__progress__bg {
+      background: #EFB661;
+    }
+  }
+
+  &__title {
+    color: #9CA3A8;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 8px;
+  }
+
+  &__numbers {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+
+    span {
+      font-size: 14px;
+      display: flex;
+      margin-bottom: -10px;
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    height: 8px;
+    box-shadow: inset 4px 4px 4px #AEAEC033, inset -4px -4px 0px #FFFFFFB2;
+    border-radius: 67px;
+    background: #F0F0F3;
+
+    &__bg {
+      height: 100%;
+      box-shadow: inset -2px -2px 2px #1D1D1D41, -10px -10px 30px #FFFFFF, inset 4px 4px 4px #AEAEC033;
+      border-radius: 67px;
+      transition: all 0.4s;
+    }
+  }
+
+  .card__risk__alert {
+    position: relative;
+    margin-left: auto;
+    font-weight: 600;
+    width: 64px;
+    height: 64px;
+    top: 4px;
+    right: -11px;
+  }
+
+  .card__risk__alert__number,
+  .card__risk__alert__title {
+    line-height: 16px;
+    font-size: 16px;
+  }
+  .card__risk__range__hr{
+    width: 105px;
+    top: 60px;
+    left: 80px;
   }
 }
