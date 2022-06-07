@@ -9,4 +9,5 @@ export {DefiCard} from './DefiCard';
 export {CurrentCard} from './CurrentCard';
 export {CurrentDefiCard} from './CurrentDefiCard';
 export {LightDefiCard} from './LightDefiCard';
-export {DeFiAside} from './DeFiAside';
+export {DeFiLightAside} from './DeFiLightAside';
+export {DefiLightCurrentCard} from './DefiLightCurrentCard';

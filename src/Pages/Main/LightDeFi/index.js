@@ -4,7 +4,7 @@ import top from '../../../Assets/img/icons/to__top.svg';
 import grid from '../../../Assets/img/icons/grid.svg';
 import list from '../../../Assets/img/icons/list.svg';
 
-import {Header,LightDefiCard,DeFiAside} from '../../../Components';
+import {Header,LightDefiCard,DeFiLightAside} from '../../../Components';
 
 
 export function LightDeFi(){
@@ -42,8 +42,7 @@ export function LightDeFi(){
                 </div>
             </div>
             </div>
-            
-            <DeFiAside/>
+            <DeFiLightAside/>
                 </main>
         </>
     )

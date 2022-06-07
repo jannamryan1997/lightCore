@@ -5,8 +5,9 @@ import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
 
+import {DefiLightCurrentCard} from '../DefiLightCurrentCard';
 
-export function DeFiAside(){
+export function DeFiLightAside(){
 
     const [openProgress, setOpenProgress] = useState(false);
     const [value, setValue] = useState(25);
@@ -83,48 +84,12 @@ export function DeFiAside(){
                     <a href="#" className="aside__tabs__link">Baseline</a>
                 </li>
             </ul>
-            <div className="aside__card cold">
-                <div className="row">
-                    <div className="aside__card__left">
-                        <h3 className="aside__card__title">Cold Wallets Risk</h3>
-                        <p className="aside__card__numbers">93/<span>100</span></p>
-                    </div>
-                    <div className="card__risk__range__hr active">
-                        <div className="card__risk__range__bg__hr"></div>
-                        <div className="card__risk__range__btn__hr">
-                            <div className="card__risk__range__btn__hr__min"></div>
-                        </div>
-                    </div>
-                    <div className="card__risk__alert active">
-                        <p className="card__risk__alert__title">Alert</p>
-                        <p className="card__risk__alert__number">70</p>
-                    </div>
-                </div>
-                <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{width:"93%"}}></div>
-                </div>
-            </div>
-            <div className="aside__card hot">
-                <div className="row">
-                    <div className="aside__card__left">
-                        <h3 className="aside__card__title">Hot Wallets Risk</h3>
-                        <p className="aside__card__numbers">65/<span>100</span></p>
-                    </div>
-                    <div className="card__risk__range__hr">
-                        <div className="card__risk__range__bg__hr"></div>
-                        <div className="card__risk__range__btn__hr">
-                            <div className="card__risk__range__btn__hr__min"></div>
-                        </div>
-                    </div>
-                    <div className="card__risk__alert">
-                        <p className="card__risk__alert__title">Alert</p>
-                        <p className="card__risk__alert__number">70</p>
-                    </div>
-                </div>
-                <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{width: "65%"}}></div>
-                </div>
-            </div>
+            {
+                currentCardItem.map((element)=>{
+                   return <DefiLightCurrentCard key={element.id} element={element}/>
+                })
+            }
+        
         </aside>
     </>
 }
