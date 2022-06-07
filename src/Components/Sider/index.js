@@ -26,7 +26,7 @@ export function Sider() {
                 </NavLink>
                 </li>
                 <li className="nav__list">
-                      <NavLink activeClassName="active" to='/'  className="nav__link"  >
+                      <NavLink activeClassName="active" to='light-defi'  className="nav__link"  >
                       <i className="icon-investment"></i>
                 </NavLink>
                 </li>

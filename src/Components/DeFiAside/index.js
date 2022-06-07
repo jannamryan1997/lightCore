@@ -1,15 +1,13 @@
-import { React, useState } from 'react';
-
-import fox from '../../Assets/img/icons/fox.png';
-import coinbase from '../../Assets/img/icons/coinbase.png';
+import {React,useState} from 'react';
 
 import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
+
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
 
-import {CurrentDefiCard} from '../CurrentDefiCard';
 
-export function AddDefiShild() {
+export function DeFiAside(){
+
     const [openProgress, setOpenProgress] = useState(false);
     const [value, setValue] = useState(25);
     const coldprops = {
@@ -33,29 +31,30 @@ export function AddDefiShild() {
         setValue(value)
     }
 
-    const [currentCardItem, setCurrentCardItem] = useState([{ id: 1, value: 'cold' }, { id: 2, value: 'hot' }]);
-    return (
+    const [currentCardItem,setCurrentCardItem] = useState([{id:1,value:'cold'},{id:2,value:'hot'}])
 
-        <aside className="aside">
-            <a href="#" className="add__wallet__btn defi">
+
+    return <>
+      <aside className="aside">
+            <a href="#" className="add__wallet__btn">
                 <span className="add__wallet__btn__plus">
-                    <img src={fox} alt="" className="fox" />
-                    <img src={coinbase} alt="" className="coinbase" />
+                    <span className="add__wallet__btn__plus__bg">
+                        <span></span><span></span>
+                    </span>
                 </span>
-                Wallet Connect
+                Add Investment
             </a>
-            <h3 className="aside__wallet__title">Wallets Risk</h3>
+            <h3 className="aside__wallet__title">Total Risk of Investment</h3>
             <div className="aside__chart__wrapper cold">
                 <div className="card__risk__chart">
                     {/* <div className="card__risk__chart__min">
-                                <p className="card__risk__chart__number">78</p>
-                                <p className="card__risk__chart__number__of">of 100</p>
-                            </div> */}
-                    <CircularProgressBar {...coldprops}>
+                        <p className="card__risk__chart__number">78</p>
+                        <p className="card__risk__chart__number__of">of 100</p>
+                    </div> */}
+                     <CircularProgressBar {...coldprops}>
                     </CircularProgressBar>
                 </div>
-
-                <div className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} onClick={(() => {
+                <div  className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} onClick={(() => {
                     setOpenProgress(!openProgress)
                 })}>
                     <p className="card__risk__alert__title">Alert</p>
@@ -84,25 +83,25 @@ export function AddDefiShild() {
                     <a href="#" className="aside__tabs__link">Baseline</a>
                 </li>
             </ul>
-            {
-                currentCardItem.map((element) => {
-                    return <CurrentDefiCard key={element} element={element} />
-                })
-            }
-
-            {/* <div className="aside__card cold">
+            <div className="aside__card cold">
                 <div className="row">
                     <div className="aside__card__left">
                         <h3 className="aside__card__title">Cold Wallets Risk</h3>
                         <p className="aside__card__numbers">93/<span>100</span></p>
                     </div>
-                    <div className="card__risk__alert">
+                    <div className="card__risk__range__hr active">
+                        <div className="card__risk__range__bg__hr"></div>
+                        <div className="card__risk__range__btn__hr">
+                            <div className="card__risk__range__btn__hr__min"></div>
+                        </div>
+                    </div>
+                    <div className="card__risk__alert active">
                         <p className="card__risk__alert__title">Alert</p>
                         <p className="card__risk__alert__number">70</p>
                     </div>
                 </div>
                 <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{ width: '93%' }}></div>
+                    <div className="aside__card__progress__bg" style={{width:"93%"}}></div>
                 </div>
             </div>
             <div className="aside__card hot">
@@ -111,16 +110,21 @@ export function AddDefiShild() {
                         <h3 className="aside__card__title">Hot Wallets Risk</h3>
                         <p className="aside__card__numbers">65/<span>100</span></p>
                     </div>
+                    <div className="card__risk__range__hr">
+                        <div className="card__risk__range__bg__hr"></div>
+                        <div className="card__risk__range__btn__hr">
+                            <div className="card__risk__range__btn__hr__min"></div>
+                        </div>
+                    </div>
                     <div className="card__risk__alert">
                         <p className="card__risk__alert__title">Alert</p>
                         <p className="card__risk__alert__number">70</p>
                     </div>
                 </div>
                 <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{ width: '65%' }}></div>
+                    <div className="aside__card__progress__bg" style={{width: "65%"}}></div>
                 </div>
-            </div> */}
+            </div>
         </aside>
-
-    )
+    </>
 }

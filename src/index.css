@@ -142,3 +142,7 @@ margin: 0 !important;
  .rangeslider__handle::after{
 display: none !important;
 }
+
+.current__card .rangeslider-horizontal{
+width: 105px !important;
+}

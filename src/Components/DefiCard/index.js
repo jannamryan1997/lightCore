@@ -13,6 +13,7 @@ export function DefiCard({ element }) {
     const [openProgress, setOpenProgress] = useState(false);
     const handleChange = (value) => {
         setValue(value)
+       
     }
 
     const [openStake, setOpenStake] = useState(false);
@@ -112,15 +113,16 @@ export function DefiCard({ element }) {
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
                                 <div  className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
-                                onClick={(() => {
+                                onClick={((event) => {
                                     setOpenProgress(!openProgress)
+                                    event.stopPropagation()
                                 })}>
                                     <p className="card__risk__alert__title">Alert</p>
                                     <p className="card__risk__alert__number">{value}</p>
                                 </div>
                                 {
                                     openProgress ? 
-                                    <div class="card__risk__range__hr active">
+                                    <div className="card__risk__range__hr active">
                                         <Slider
                                             min={0}
                                             max={100}
@@ -210,7 +212,7 @@ export function DefiCard({ element }) {
                                     <p className="card__risk__alert__number">{value}</p>
                                 </div>
                                 {
-                                    openProgress ? <div class="card__risk__range__hr active">
+                                    openProgress ? <div className="card__risk__range__hr active">
                                         <Slider
                                             min={0}
                                             max={100}

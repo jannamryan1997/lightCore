@@ -1,6 +1,9 @@
 import { React, useState } from 'react';
 
 import top from '../../../Assets/img/icons/to__top.svg';
+import grid from '../../../Assets/img/icons/grid.svg';
+import list from '../../../Assets/img/icons/list.svg';
+
 
 import { WalletCard } from '../../../Components';
 
@@ -8,8 +11,6 @@ import { Aside,Header} from '../../../Components';
 import { AddWallet } from '../../../Modal/index';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
-import grid from '../../../Assets/img/icons/grid.svg';
-import list from '../../../Assets/img/icons/list.svg';
 
 
 export function WalletsShield() {
@@ -67,12 +68,12 @@ export function WalletsShield() {
                 <a href="#header" className="to__top">
                     <img src={top} alt="top" className="to__top__icon" />
                 </a>
-                <div class="layout__block">
-                <div class="layout__grid">
-                    <img src={grid} alt="" class="layout__grid__icon"/>
+                <div className="layout__block">
+                <div className="layout__grid">
+                    <img src={grid} alt="" className="layout__grid__icon"/>
                 </div>
-                <div class="layout__list">
-                    <img src={list} alt="" class="layout__list__icon"/>
+                <div className="layout__list">
+                    <img src={list} alt="" className="layout__list__icon"/>
                 </div>
             </div>
             </div>

@@ -1,7 +1,11 @@
 import { React, useState } from 'react';
+
 import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
+
 import Slider from 'react-rangeslider';
 import 'react-rangeslider/lib/index.css';
+
+import {CurrentCard} from '../CurrentCard';
 
 export function Aside({ openModal }) {
     const [openProgress, setOpenProgress] = useState(false);
@@ -26,6 +30,8 @@ export function Aside({ openModal }) {
     const handleChange = (value) => {
         setValue(value)
     }
+
+    const [currentCardItem,setCurrentCardItem] = useState([{id:1,value:'cold'},{id:2,value:'hot'}])
 
     return (
         <aside className="aside">
@@ -55,7 +61,7 @@ export function Aside({ openModal }) {
                     <p className="card__risk__alert__number">{value}</p>
                 </div>
                 {
-                    openProgress ? <div class="card__risk__range__hr active">
+                    openProgress ? <div className="card__risk__range__hr active">
                         <Slider
                             min={0}
                             max={100}
@@ -78,36 +84,12 @@ export function Aside({ openModal }) {
                     <a href="#" className="aside__tabs__link">Baseline</a>
                 </li>
             </ul>
-            <div className="aside__card cold">
-                <div className="row">
-                    <div className="aside__card__left">
-                        <h3 className="aside__card__title">Cold Wallets Risk</h3>
-                        <p className="aside__card__numbers">93/<span>100</span></p>
-                    </div>
-                    <div className="card__risk__alert">
-                        <p className="card__risk__alert__title">Alert</p>
-                        <p className="card__risk__alert__number">70</p>
-                    </div>
-                </div>
-                <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{ width: '93%' }}></div>
-                </div>
-            </div>
-            <div className="aside__card hot">
-                <div className="row">
-                    <div className="aside__card__left">
-                        <h3 className="aside__card__title">Hot Wallets Risk</h3>
-                        <p className="aside__card__numbers">65/<span>100</span></p>
-                    </div>
-                    <div className="card__risk__alert">
-                        <p className="card__risk__alert__title">Alert</p>
-                        <p className="card__risk__alert__number">70</p>
-                    </div>
-                </div>
-                <div className="aside__card__progress">
-                    <div className="aside__card__progress__bg" style={{ width: '65%' }}></div>
-                </div>
-            </div>
+            {
+                currentCardItem.map((element)=>{
+                    return   <CurrentCard key={element.id} element={element}/>
+                })
+            }
+          
         </aside>
     )
 }
