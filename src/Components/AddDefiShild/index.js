@@ -86,7 +86,7 @@ export function AddDefiShild() {
             </ul>
             {
                 currentCardItem.map((element) => {
-                    return <CurrentDefiCard key={element} element={element} />
+                    return <CurrentDefiCard key={element.id} element={element} />
                 })
             }
 

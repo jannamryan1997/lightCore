@@ -89,10 +89,10 @@ export function DefiCard({ element }) {
                                     <div className="card__product__number">95</div>
                                 </div>
                             </div>
-                            <OutsideClickHandler onOutsideClick={(event) => {
+                            {/* <OutsideClickHandler onOutsideClick={(event) => {
                                 event.stopPropagation()
                                 setOpenStake(false)
-                            }}>
+                            }}> */}
                                 <div className="card__product__stake__block">
                                     <button className={'card__product__stake' + ' ' + (openStake ? 'card__product__stake_active' : 'card__product__stake')} onClick={(() => {
                                         setOpenStake(!openStake)
@@ -109,7 +109,7 @@ export function DefiCard({ element }) {
                                     }
 
                                 </div>
-                            </OutsideClickHandler>
+                            {/* </OutsideClickHandler> */}
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
                                 <div  className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
@@ -178,10 +178,10 @@ export function DefiCard({ element }) {
                                     <div className="card__product__number">95</div>
                                 </div>
                             </div>
-                            <OutsideClickHandler onOutsideClick={(event) => {
+                            {/* <OutsideClickHandler onOutsideClick={(event) => {
                                 event.stopPropagation()
                                 setopenRiskStake(false)
-                            }}>
+                            }}> */}
                                 <div className="card__product__stake__block">
                                     <button className={'card__product__stake' + ' ' + (openRiskStake ? 'card__product__stake_active' : 'card__product__stake')}
                                         onClick={((event) => {
@@ -200,7 +200,7 @@ export function DefiCard({ element }) {
                                     }
 
                                 </div>
-                            </OutsideClickHandler>
+                            {/* </OutsideClickHandler> */}
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
                                 <div   className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
