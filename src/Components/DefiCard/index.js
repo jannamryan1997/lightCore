@@ -13,7 +13,7 @@ export function DefiCard({ element }) {
     const [openProgress, setOpenProgress] = useState(false);
     const handleChange = (value) => {
         setValue(value)
-       
+
     }
 
     const [openStake, setOpenStake] = useState(false);
@@ -89,10 +89,10 @@ export function DefiCard({ element }) {
                                     <div className="card__product__number">95</div>
                                 </div>
                             </div>
-                            {/* <OutsideClickHandler onOutsideClick={(event) => {
+                            <OutsideClickHandler disabled={openStake ? false : true} onOutsideClick={(event) => {
                                 event.stopPropagation()
                                 setOpenStake(false)
-                            }}> */}
+                            }}>
                                 <div className="card__product__stake__block">
                                     <button className={'card__product__stake' + ' ' + (openStake ? 'card__product__stake_active' : 'card__product__stake')} onClick={(() => {
                                         setOpenStake(!openStake)
@@ -109,28 +109,28 @@ export function DefiCard({ element }) {
                                     }
 
                                 </div>
-                            {/* </OutsideClickHandler> */}
+                            </OutsideClickHandler>
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
-                                <div  className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
-                                onClick={((event) => {
-                                    setOpenProgress(!openProgress)
-                                    event.stopPropagation()
-                                })}>
+                                <div className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')}
+                                    onClick={((event) => {
+                                        setOpenProgress(!openProgress)
+                                        event.stopPropagation()
+                                    })}>
                                     <p className="card__risk__alert__title">Alert</p>
                                     <p className="card__risk__alert__number">{value}</p>
                                 </div>
                                 {
-                                    openProgress ? 
-                                    <div className="card__risk__range__hr active">
-                                        <Slider
-                                            min={0}
-                                            max={100}
-                                            value={value}
-                                            orientation='vertical'
-                                            onChange={handleChange}
-                                        />
-                                    </div> : null
+                                    openProgress ?
+                                        <div className="card__risk__range__hr active">
+                                            <Slider
+                                                min={0}
+                                                max={100}
+                                                value={value}
+                                                orientation='vertical'
+                                                onChange={handleChange}
+                                            />
+                                        </div> : null
                                 }
                                 <div className="card__risk__chart">
                                     {/* <div className="card__risk__chart__min">
@@ -178,36 +178,36 @@ export function DefiCard({ element }) {
                                     <div className="card__product__number">95</div>
                                 </div>
                             </div>
-                            {/* <OutsideClickHandler onOutsideClick={(event) => {
+                            <OutsideClickHandler  disabled={openStake ? false : true} onOutsideClick={(event) => {
                                 event.stopPropagation()
                                 setopenRiskStake(false)
-                            }}> */}
-                                <div className="card__product__stake__block">
-                                    <button className={'card__product__stake' + ' ' + (openRiskStake ? 'card__product__stake_active' : 'card__product__stake')}
-                                        onClick={((event) => {
-                                            event.stopPropagation()
-                                            setopenRiskStake(!openRiskStake)
-                                        })}>Stake</button>
-                                    <button className="card__product__unstacked">Unstake</button>
-                                    {openRiskStake ?
-                                        <div className="card__product__stake__amount open">
-                                            <div className="card__product__stake__amount__input__wrapper">
-                                                <input placeholder="Amount" type="text" className="card__product__stake__amount__input" />
-                                            </div>
-                                            <button className="card__product__stake__amount__max">Max Amount</button>
-                                            <button className="card__product__stake__amount__confirm">Confirm</button>
-                                        </div> : null
-                                    }
+                            }}>
+                            <div className="card__product__stake__block">
+                                <button className={'card__product__stake' + ' ' + (openRiskStake ? 'card__product__stake_active' : 'card__product__stake')}
+                                    onClick={((event) => {
+                                        event.stopPropagation()
+                                        setopenRiskStake(!openRiskStake)
+                                    })}>Stake</button>
+                                <button className="card__product__unstacked">Unstake</button>
+                                {openRiskStake ?
+                                    <div className="card__product__stake__amount open">
+                                        <div className="card__product__stake__amount__input__wrapper">
+                                            <input placeholder="Amount" type="text" className="card__product__stake__amount__input" />
+                                        </div>
+                                        <button className="card__product__stake__amount__max">Max Amount</button>
+                                        <button className="card__product__stake__amount__confirm">Confirm</button>
+                                    </div> : null
+                                }
 
-                                </div>
-                            {/* </OutsideClickHandler> */}
+                            </div>
+                            </OutsideClickHandler>
                             <div className="card__risk">
                                 <h3 className="card__risk__title">Product Risk</h3>
-                                <div   className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')} 
-                                onClick={((event) => {
-                                    event.stopPropagation()
-                                    setOpenProgress(!openProgress)
-                                })}>
+                                <div className={'card__risk__alert' + ' ' + (openProgress ? 'active' : 'card__risk__alert')}
+                                    onClick={((event) => {
+                                        event.stopPropagation()
+                                        setOpenProgress(!openProgress)
+                                    })}>
                                     <p className="card__risk__alert__title">Alert</p>
                                     <p className="card__risk__alert__number">{value}</p>
                                 </div>
